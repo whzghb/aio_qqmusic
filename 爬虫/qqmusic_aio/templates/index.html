@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mymusic</title>
+    <style>
+        body{
+            list-style: none
+        }
+    </style>
+</head>
+<body>
+    <form action="/" method="post">
+        <input type="text" name = "name" placeholder="songname/singer">
+        <input type="submit" value="搜索">
+    </form>
+    <ul>
+        {% for music in data %}
+        <li>{{ loop.index }},<a href={{ music.url }}>{{ music.name }}-{{ music.singer }}</a>
+            <span>该榜单排名{{ music.rank }}</span></li></br>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for res in data_from_name %}
+        <li>{{ loop.index }},<a href={{ res.url }}>{{ res.name }}-{{ res.singer }}</a>
+            <span>该榜单排名{{ res.rank }}</span></li></br>
+        {% endfor %}
+    </ul>
+    <ul>
+        {% for res in data_from_singer %}
+        <li>{{ loop.index }},<a href={{ res.url }}>{{ res.name }}-{{ res.singer }}</a>
+            <span>该榜单排名{{ res.rank }}</span></li></br>
+        {% endfor %}
+    </ul>
+</body>
+</html>
