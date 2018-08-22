@@ -5,7 +5,7 @@
     <title>Mymusic</title>
     <style>
         body{
-            list-style: none
+            list-style: none;
         }
     </style>
 </head>
@@ -21,15 +21,9 @@
         {% endfor %}
     </ul>
     <ul>
-        {% for res in data_from_name %}
-        <li>{{ loop.index }},<a href={{ res.url }}>{{ res.name }}-{{ res.singer }}</a>
-            <span>该榜单排名{{ res.rank }}</span></li></br>
-        {% endfor %}
-    </ul>
-    <ul>
-        {% for res in data_from_singer %}
-        <li>{{ loop.index }},<a href={{ res.url }}>{{ res.name }}-{{ res.singer }}</a>
-            <span>该榜单排名{{ res.rank }}</span></li></br>
+        {% for song in all_song %}
+        <li>{{ loop.index }},<a href={{ song.1 }}>{{ song.0 }}</a>
+            <span>{{ song.2 }}---{{ song.3 }}</span></li></br>
         {% endfor %}
     </ul>
 </body>
