@@ -23,7 +23,7 @@ async def save(res):
             result = {
                 "rank":rank+1,
                 "url":"http://ws.stream.qqmusic.qq.com/C100%s.m4a?"
-                                "fromtag=0&guid=126548448" % detail[2],
+                      "fromtag=0&guid=126548448" % detail[2],
                 "name":detail[3],
                 "singer":detail[1],
             }
